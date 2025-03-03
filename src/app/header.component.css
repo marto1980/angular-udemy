@@ -27,14 +27,12 @@ h1 {
   font-size: 1.25rem;
   margin: 0;
   padding: 0;
-  color: white;
 }
 
 p {
   margin: 0;
   font-size: 1rem;
   text-wrap: balance;
-  color: white;
 }
 
 @media (min-width: 768px) {
