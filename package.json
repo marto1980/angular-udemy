@@ -1,5 +1,6 @@
 {
   "name": "udemy",
+  "type": "module",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +8,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:udemy": "node dist/udemy/server/server.mjs"
+    "serve:ssr:udemy": "node dist/udemy/server/server.mjs",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -28,18 +30,41 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.8",
+    "@angular-eslint/eslint-plugin": "^19.2.1",
+    "@angular-eslint/eslint-plugin-template": "^19.2.1",
     "@angular/cli": "^19.1.8",
     "@angular/compiler-cli": "^19.1.0",
+    "@trivago/prettier-plugin-sort-imports": "^5",
+    "@types/eslint-plugin-jsx-a11y": "^6",
+    "@types/eslint-plugin-security": "^3",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10",
+    "eslint-plugin-prettier": "^5",
+    "eslint-plugin-functional": "^8",
+    "eslint-plugin-prefer-arrow": "^1",
+    "eslint-plugin-prefer-arrow-functions": "^3",
+    "eslint-plugin-promise": "7.2.1",
+    "eslint-plugin-react-perf": "^3",
+    "eslint-plugin-security": "^3",
+    "eslint-plugin-sonarjs": "^3",
+    "eslint-plugin-unicorn": "^56",
+    "husky": "^9",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "lint-staged": "^15",
+    "prettier": "^3",
+    "stylelint": "^16",
+    "stylelint-config-standard-scss": "^14",
+    "stylelint-prettier": "^5",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8"
   },
   "overrides": {
     "rollup": "npm:@rollup/wasm-node@latest"
