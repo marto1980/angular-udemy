@@ -1,13 +1,13 @@
-import eslint from '@eslint/js';
-import arrayFunc from 'eslint-plugin-array-func';
-import functional from 'eslint-plugin-functional';
-import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';
-import prettier from 'eslint-plugin-prettier/recommended';
-import promise from 'eslint-plugin-promise';
-import security from 'eslint-plugin-security';
-import sonarjs from 'eslint-plugin-sonarjs';
-import unicorn from 'eslint-plugin-unicorn';
-import tseslint from 'typescript-eslint';
+import eslint from '@eslint/js'
+import arrayFunc from 'eslint-plugin-array-func'
+import functional from 'eslint-plugin-functional'
+import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions'
+import prettier from 'eslint-plugin-prettier/recommended'
+import promise from 'eslint-plugin-promise'
+import security from 'eslint-plugin-security'
+import sonarjs from 'eslint-plugin-sonarjs'
+import unicorn from 'eslint-plugin-unicorn'
+import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   functional.configs.externalTypeScriptRecommended,
@@ -21,7 +21,7 @@ export default tseslint.config(
   sonarjs.configs.recommended,
   security.configs.recommended,
   promise.configs['flat/recommended'],
-  unicorn.configs['flat/recommended'],
+  unicorn.configs['recommended'],
   {
     ignores: [
       'node_modules/**', // Ignore node_modules
@@ -137,4 +137,4 @@ export default tseslint.config(
       'testing-library/utils-module': ['**/__test-utils__'],
     },
   },
-);
+)
