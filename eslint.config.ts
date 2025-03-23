@@ -1,7 +1,6 @@
 import eslint from '@eslint/js';
 import arrayFunc from 'eslint-plugin-array-func';
 import functional from 'eslint-plugin-functional';
-import jest from 'eslint-plugin-jest';
 import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';
 import prettier from 'eslint-plugin-prettier/recommended';
 import promise from 'eslint-plugin-promise';
