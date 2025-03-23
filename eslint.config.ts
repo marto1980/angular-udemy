@@ -103,6 +103,7 @@ export default tseslint.config(
     files: ['**/*.component.ts', '**/*.service.ts', '**/*.directive.ts'], // Angular-specific files
     rules: {
       'functional/no-classes': 'off',
+      '@typescript-eslint/no-extraneous-class': 'off',
     },
   },
   {
