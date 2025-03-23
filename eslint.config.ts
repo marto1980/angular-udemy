@@ -39,7 +39,7 @@ export default tseslint.config(
     ],
   },
   {
-    files: ['**/*.{ts,tsx,d.ts}'], // Target JavaScript and TypeScript files
+    files: ['**/*.{ts,d.ts}'], // Target TypeScript files
     languageOptions: {
       parser: tseslint.parser, // Use TypeScript parser
       parserOptions: {
@@ -101,7 +101,13 @@ export default tseslint.config(
     },
   },
   {
-    files: ['**/*.test.{ts,tsx}'], // Match test files
+    files: ['**/*.component.ts', '**/*.service.ts', '**/*.directive.ts'], // Angular-specific files
+    rules: {
+      'functional/no-classes': 'off',
+    },
+  },
+  {
+    files: ['**/*.test.{ts,ts}'], // Match test files
     languageOptions: {
       parser: tseslint.parser, // Use TypeScript parser for test files
     },
