@@ -97,6 +97,14 @@ export default tseslint.config(
       ],
       // arrayFunc rules
       'array-func/prefer-array-from': 'off',
+
+      // functional rules
+      'functional/immutable-data': [
+        'error',
+        {
+          ignoreClasses: true,
+        },
+      ],
     },
   },
   {

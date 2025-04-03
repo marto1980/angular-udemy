@@ -18,4 +18,10 @@ export class UserComponent {
   get imagePath() {
     return 'assets/users/' + this.selectedUser.avatar
   }
+  onSelectUser() {
+    // eslint-disable-next-line sonarjs/pseudo-random
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
+    // eslint-disable-next-line security/detect-object-injection
+    this.selectedUser = DUMMY_USERS[randomIndex]
+  }
 }
