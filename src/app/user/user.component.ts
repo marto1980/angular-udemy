@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, computed, signal } from '@angular/core'
 
 import { DUMMY_USERS } from '../dummy-users'
 
@@ -12,16 +12,18 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
+  private readonly computeImagePath = () =>
+    'assets/users/' + this.selectedUser().avatar
   // eslint-disable-next-line security/detect-object-injection
-  selectedUser = DUMMY_USERS[randomIndex]
+  selectedUser = signal(DUMMY_USERS[randomIndex])
 
-  get imagePath() {
-    return 'assets/users/' + this.selectedUser.avatar
-  }
+  imagePath = computed(this.computeImagePath)
   onSelectUser() {
     // eslint-disable-next-line sonarjs/pseudo-random
     const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
-    // eslint-disable-next-line security/detect-object-injection
-    this.selectedUser = DUMMY_USERS[randomIndex]
+    const randomUser = DUMMY_USERS.at(randomIndex)
+    if (randomUser) {
+      this.selectedUser.set(randomUser)
+    }
   }
 }
