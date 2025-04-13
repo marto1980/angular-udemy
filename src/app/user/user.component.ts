@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: 'app-user',
@@ -7,12 +7,15 @@ import { Component, Input } from '@angular/core'
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
+  @Input({ required: true }) id!: string
   @Input({ required: true }) avatar!: string
   @Input({ required: true }) name!: string
+  @Output() select = new EventEmitter<string>()
   get ImagePath() {
     return 'assets/users/' + this.avatar
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onSelectUser() {}
+  onSelectUser() {
+    this.select.emit(this.id)
+  }
 }
