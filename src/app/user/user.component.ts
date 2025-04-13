@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 @Component({
   selector: 'app-user',
@@ -7,12 +7,11 @@ import { Component, computed, input } from '@angular/core'
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
-  // @Input({ required: true }) avatar!: string
-  // @Input({ required: true }) name!: string
-  avatar = input.required<string>()
-  name = input.required<string>()
-  private readonly computeImagePath = () => 'assets/users/' + this.avatar()
-  ImagePath = computed(this.computeImagePath)
+  @Input({ required: true }) avatar!: string
+  @Input({ required: true }) name!: string
+  get ImagePath() {
+    return 'assets/users/' + this.avatar
+  }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onSelectUser() {}
