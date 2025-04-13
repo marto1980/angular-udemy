@@ -2,19 +2,23 @@ import { Component } from '@angular/core'
 
 import { DUMMY_USERS } from './dummy-users'
 import { HeaderComponent } from './header/header.component'
-import { UserDataComponent } from './user-data/user-data.component'
+import { TasksComponent } from './tasks/tasks.component'
 import { UserComponent } from './user/user.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, UserComponent, UserDataComponent],
+  imports: [HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   users = DUMMY_USERS
-  selectedUserId: string | undefined
+  selectedUserId = 'u1'
+  get selectedUser() {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return DUMMY_USERS.find((user) => user.id === this.selectedUserId)!
+  }
   onSelectUser(id: string) {
     this.selectedUserId = id
     console.log('Selected user with id:' + id)
