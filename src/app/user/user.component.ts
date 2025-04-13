@@ -1,9 +1,4 @@
-import { Component, computed, signal } from '@angular/core'
-
-import { DUMMY_USERS } from '../dummy-users'
-
-// eslint-disable-next-line sonarjs/pseudo-random
-const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
+import { Component, computed, input } from '@angular/core'
 
 @Component({
   selector: 'app-user',
@@ -12,18 +7,13 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
-  private readonly computeImagePath = () =>
-    'assets/users/' + this.selectedUser().avatar
-  // eslint-disable-next-line security/detect-object-injection
-  selectedUser = signal(DUMMY_USERS[randomIndex])
+  // @Input({ required: true }) avatar!: string
+  // @Input({ required: true }) name!: string
+  avatar = input.required<string>()
+  name = input.required<string>()
+  private readonly computeImagePath = () => 'assets/users/' + this.avatar()
+  ImagePath = computed(this.computeImagePath)
 
-  imagePath = computed(this.computeImagePath)
-  onSelectUser() {
-    // eslint-disable-next-line sonarjs/pseudo-random
-    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
-    const randomUser = DUMMY_USERS.at(randomIndex)
-    if (randomUser) {
-      this.selectedUser.set(randomUser)
-    }
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onSelectUser() {}
 }
