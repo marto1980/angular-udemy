@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core'
   templateUrl: './tasks.component.html',
 })
 export class TasksComponent {
-  @Input() name?: string
+  @Input() name: string | undefined
 }
