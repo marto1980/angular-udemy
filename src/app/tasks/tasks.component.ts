@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core'
   templateUrl: './tasks.component.html',
 })
 export class TasksComponent {
-  @Input({ required: true }) name!: string
+  @Input() name?: string
 }

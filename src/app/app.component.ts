@@ -16,8 +16,7 @@ export class AppComponent {
   users = DUMMY_USERS
   selectedUserId = 'u1'
   get selectedUser() {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return DUMMY_USERS.find((user) => user.id === this.selectedUserId)!
+    return DUMMY_USERS.find((user) => user.id === this.selectedUserId)
   }
   onSelectUser(id: string) {
     this.selectedUserId = id
