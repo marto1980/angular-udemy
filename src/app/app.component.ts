@@ -14,7 +14,7 @@ import { UserComponent } from './user/user.component'
 })
 export class AppComponent {
   users = DUMMY_USERS
-  selectedUserId = 'u1'
+  selectedUserId?: string
   get selectedUser() {
     return DUMMY_USERS.find((user) => user.id === this.selectedUserId)
   }
