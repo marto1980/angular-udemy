@@ -8,7 +8,6 @@ const config: Config = {
     'scss/at-rule-no-unknown': true,
 
     // Reasonable defaults
-    'declaration-block-trailing-semicolon': 'always',
     'block-no-empty': true,
     'color-no-invalid-hex': true,
     'unit-no-unknown': true,
