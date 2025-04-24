@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 
+import { dummyTasks } from './dummy-tasks'
 import { TaskComponent } from './task/task.component'
 
 @Component({
@@ -9,5 +10,10 @@ import { TaskComponent } from './task/task.component'
   styleUrl: './tasks.component.scss',
 })
 export class TasksComponent {
-  @Input() name: string | undefined
+  @Input({ required: true }) userId!: string
+  @Input({ required: true }) name: string | undefined
+  tasks = dummyTasks
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.userId)
+  }
 }
