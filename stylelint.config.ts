@@ -2,6 +2,7 @@ import type { Config } from 'stylelint'
 
 const config: Config = {
   extends: ['stylelint-config-standard-scss'],
+  plugins: [],
   rules: {
     // SCSS compatibility
     'at-rule-no-unknown': undefined,
@@ -11,9 +12,6 @@ const config: Config = {
     'block-no-empty': true,
     'color-no-invalid-hex': true,
     'unit-no-unknown': true,
-
-    // Optional: relax specificity warnings (for media queries, etc.)
-    'no-descending-specificity': undefined,
   },
   ignoreFiles: [
     '**/node_modules/**',

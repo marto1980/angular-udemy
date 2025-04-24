@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:udemy": "node dist/udemy/server/server.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:css": "stylelint --config stylelint.config.ts '**/*.scss'"
   },
   "private": true,
   "dependencies": {
