@@ -12,6 +12,7 @@ const config: Config = {
     'block-no-empty': true,
     'color-no-invalid-hex': true,
     'unit-no-unknown': true,
+    'color-function-notation': undefined,
   },
   ignoreFiles: [
     '**/node_modules/**',
