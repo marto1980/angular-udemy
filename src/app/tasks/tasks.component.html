@@ -2,9 +2,12 @@
   <header>
     <h2>{{ name }}' Tasks</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="onAddTask()">Add Task</button>
     </menu>
   </header>
+  @if (showNewTask) {
+    <app-new-task />
+  }
   <ul>
     @for (task of selectedUserTasks; track task.id) {
       <li>
