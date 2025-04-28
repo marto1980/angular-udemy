@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core'
   styleUrl: './new-task.component.scss',
 })
 export class NewTaskComponent {
-  @Output() cancel = new EventEmitter()
+  @Output() cancel = new EventEmitter<void>()
   onCancel() {
     this.cancel.emit()
   }
