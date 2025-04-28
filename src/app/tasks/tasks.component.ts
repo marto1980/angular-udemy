@@ -14,14 +14,14 @@ export class TasksComponent {
   @Input({ required: true }) userId!: string
   @Input({ required: true }) name: string | undefined
   tasks = dummyTasks
-  showNewTask = false
+  isAddingTask = false
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId)
   }
   onCompleteTask(id: string) {
     this.tasks = this.tasks.filter((task) => task.id !== id)
   }
-  onAddTask() {
-    this.showNewTask = true
+  onStartAddTask() {
+    this.isAddingTask = true
   }
 }
