@@ -6,4 +6,10 @@ type Task = {
   dueDate: string
 }
 
-export type { Task }
+type NewTaskData = Readonly<{
+  title: string
+  summary: string
+  date: string
+}>
+
+export type { Task, NewTaskData }
