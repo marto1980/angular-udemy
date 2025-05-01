@@ -1,9 +1,8 @@
-import { Component, Input } from '@angular/core'
+import { Component, Inject, Input } from '@angular/core'
 
-import { dummyTasks } from './dummy-tasks'
 import { NewTaskComponent } from './new-task/new-task.component'
 import { TaskComponent } from './task/task.component'
-import { type NewTaskData } from './task/task.model'
+import { TasksService } from './tasks.service'
 
 @Component({
   selector: 'app-tasks',
@@ -14,31 +13,19 @@ import { type NewTaskData } from './task/task.model'
 export class TasksComponent {
   @Input({ required: true }) userId!: string
   @Input({ required: true }) name: string | undefined
-  tasks = dummyTasks
   isAddingTask = false
+  constructor(
+    @Inject(TasksService) private readonly tasksService: Readonly<TasksService>,
+  ) {}
+
   get selectedUserTasks() {
-    return this.tasks.filter((task) => task.userId === this.userId)
+    return this.tasksService.getUserTasks(this.userId)
   }
-  onCompleteTask(id: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== id)
-  }
+
   onStartAddTask() {
     this.isAddingTask = true
   }
-  onCancelAddTask() {
-    this.isAddingTask = false
-  }
-  onAddTask(taskData: NewTaskData) {
-    this.tasks = [
-      {
-        id: Date.now().toString(),
-        userId: this.userId,
-        title: taskData.title,
-        summary: taskData.summary,
-        dueDate: taskData.date,
-      },
-      ...this.tasks,
-    ]
+  onCloseAddTask() {
     this.isAddingTask = false
   }
 }
