@@ -67,10 +67,12 @@ export default tseslint.config(
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       '@typescript-eslint/prefer-readonly': 'warn', // Enforce immutability where possible
       '@typescript-eslint/no-floating-promises': 'error', // Ensure unhandled promises are caught
+      '@typescript-eslint/no-extraneous-class': 'off',
 
       // Unicorn rules
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/no-array-for-each': 'off',
+      'unicorn/prefer-top-level-await': 'off',
 
       // Functional rules
       'functional/no-return-void': 'off', // Allow void return types
@@ -78,6 +80,7 @@ export default tseslint.config(
       'functional/no-mixed-types': 'off',
       'functional/no-conditional-statements': 'off',
       'functional/no-expression-statements': 'off',
+      'functional/no-classes': 'off',
 
       // SonarJS rules
       'sonarjs/todo-tag': 'warn',
