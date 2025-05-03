@@ -1,11 +1,10 @@
 import { Component, Input, output } from '@angular/core'
 
-import { CardComponent } from '../shared/card/card.component'
 import { type User } from './user.model'
 
 @Component({
   selector: 'app-user',
-  imports: [CardComponent],
+  standalone: false,
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss',
 })
