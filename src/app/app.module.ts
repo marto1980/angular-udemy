@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './header/header.component'
-import { CardComponent } from './shared/card/card.component'
+import { SharedModule } from './shared/shared.module'
 import { NewTaskComponent } from './tasks/new-task/new-task.component'
 import { TaskComponent } from './tasks/task/task.component'
 import { TasksComponent } from './tasks/tasks.component'
@@ -18,9 +18,8 @@ import { UserComponent } from './user/user.component'
     TasksComponent,
     TaskComponent,
     NewTaskComponent,
-    CardComponent,
   ], // for non-standalone components
   bootstrap: [AppComponent],
-  imports: [BrowserModule, FormsModule], // for angular modules and standalone components
+  imports: [BrowserModule, FormsModule, SharedModule], // for angular modules and standalone components
 })
 export class AppModule {}
